@@ -30,17 +30,35 @@ body {
   align-items: center;
 }
 
+/* Logo Component */
 .logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  color: #000000 !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
 }
 
-.logo span {
+.logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #000000;
+  display: block;
+}
+
+.logo-text {
+  font-weight: 900;
+  font-size: 1.15rem;
   color: #000000 !important;
-  margin: 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  font-style: italic;
+  font-weight: 900;
+  margin-left: 2px;
+  color: #000000 !important;
 }
 
 .nav-links {
@@ -138,7 +156,7 @@ section {
   gap: 24px;
 }
 
-/* Fix Cards (Tiles) to White */
+/* Cards (Tiles) */
 .tile {
   background-color: #ffffff !important;
   border: 2px solid #000000 !important;
@@ -179,7 +197,7 @@ section {
   font-size: 0.9rem;
 }
 
-/* Hover effect: Card becomes Black on Mouse Hover */
+/* Hover effect */
 .tile:hover {
   background-color: #000000 !important;
   color: #ffffff !important;
