@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Upload — Pushpam GFX</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <img src="assets/avatar.png" alt="Pushpam GFX Avatar" class="logo-img">
+      <span class="logo-text">Pushpam <span>GFX</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="fonts.html">Fonts</a></li>
+      <li><a href="posters.html">Posters</a></li>
+      <li><a href="thumbnails.html">Thumbnails</a></li>
+      <li><a href="textures.html">Textures</a></li>
+      <li><a href="author.html">Author</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <div class="wrap" style="text-align: center; padding: 60px 0;">
+    <div class="eyebrow">Admin Panel</div>
+    <h1 style="font-size: 2.2rem; margin-bottom: 16px;">Upload Resource File</h1>
+    <p style="margin-bottom: 30px;">Upload .ZIP, .PSD, .PNG, or font files directly to Cloudinary storage.</p>
+
+    <button id="upload_widget" class="go" style="padding: 14px 28px; background: #000; color: #fff !important; border: 2px solid #000; border-radius: 6px; cursor: pointer; font-size: 1rem;">
+      Upload File ↓
+    </button>
+
+    <!-- Upload Result Box -->
+    <div id="result" style="margin-top: 30px; display: none;" class="tile">
+      <h3>File Uploaded Successfully!</h3>
+      <p id="file_url_text" style="word-break: break-all; font-family: monospace; font-size: 0.9rem; margin: 15px 0;"></p>
+      <button onclick="copyLink()" class="go" style="background:none; border:1px solid #000; padding:6px 12px; cursor:pointer;">Copy File URL</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Pushpam GFX. Admin Portal.</span>
+      <span>Hosted on GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Cloudinary Upload Widget Configuration
+  var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'pxt57u7f', 
+    uploadPreset: 'pushpam_preset'
+  }, (error, result) => { 
+      if (!error && result && result.event === "success") { 
+        var fileUrl = result.info.secure_url;
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('file_url_text').innerText = fileUrl;
+      }
+    }
+  );
+
+  document.getElementById("upload_widget").addEventListener("click", function(){
+      myWidget.open();
+    }, false);
+
+  function copyLink() {
+    var urlText = document.getElementById('file_url_text').innerText;
+    navigator.clipboard.writeText(urlText);
+    alert("URL copied to clipboard!");
+  }
+</script>
+</body>
+</html>
+
