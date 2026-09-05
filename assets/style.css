@@ -21,6 +21,7 @@ body {
 .site-nav {
   border-bottom: 2px solid #000000;
   padding: 20px 0;
+  background-color: #ffffff;
 }
 
 .site-nav .wrap {
@@ -33,12 +34,12 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 2px;
-  color: #000000;
+  color: #000000 !important;
   text-decoration: none;
 }
 
 .logo span {
-  color: #000000;
+  color: #000000 !important;
   margin: 0 4px;
 }
 
@@ -49,15 +50,14 @@ body {
 }
 
 .nav-links a {
-  color: #000000;
+  color: #000000 !important;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: text-decoration 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #000000;
+  color: #000000 !important;
   font-weight: 700;
   text-decoration: underline;
 }
@@ -72,13 +72,14 @@ body {
 /* Hero Section */
 .hero {
   padding: 80px 0 60px;
+  background-color: #ffffff;
 }
 
 .eyebrow {
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 2px;
-  color: #000000;
+  color: #000000 !important;
   font-weight: 600;
   margin-bottom: 16px;
 }
@@ -86,18 +87,23 @@ body {
 .hero h1 {
   font-size: 3rem;
   line-height: 1.15;
-  color: #000000;
+  color: #000000 !important;
   font-weight: 700;
   margin-bottom: 24px;
 }
 
 .hero h1 .line {
   display: block;
+  color: #000000 !important;
+}
+
+.hero h1 .line span {
+  color: #000000 !important;
 }
 
 .hero p {
   max-width: 600px;
-  color: #000000;
+  color: #000000 !important;
   font-size: 1.1rem;
   margin-bottom: 32px;
 }
@@ -111,18 +117,19 @@ body {
 
 .meta div {
   font-size: 0.85rem;
-  color: #000000;
+  color: #000000 !important;
 }
 
 .meta strong {
   display: block;
-  color: #000000;
+  color: #000000 !important;
   font-size: 1.1rem;
 }
 
 /* Tiles Section */
 section {
   padding: 40px 0 80px;
+  background-color: #ffffff;
 }
 
 .tiles {
@@ -131,35 +138,23 @@ section {
   gap: 24px;
 }
 
+/* Fix Cards (Tiles) to White */
 .tile {
-  background: #ffffff;
-  border: 2px solid #000000;
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
   border-radius: 8px;
   padding: 32px;
   text-decoration: none;
-  color: #000000;
+  color: #000000 !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.tile:hover {
-  background-color: #000000;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.tile:hover .num,
-.tile:hover h3,
-.tile:hover p,
-.tile:hover .go {
-  color: #ffffff;
+  transition: all 0.2s ease;
 }
 
 .num {
   font-size: 0.8rem;
-  color: #000000;
+  color: #000000 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 24px;
@@ -167,28 +162,43 @@ section {
 }
 
 .tile h3 {
-  color: #000000;
+  color: #000000 !important;
   font-size: 1.3rem;
   margin-bottom: 8px;
 }
 
 .tile p {
-  color: #000000;
+  color: #000000 !important;
   font-size: 0.95rem;
   margin-bottom: 24px;
 }
 
 .go {
-  color: #000000;
+  color: #000000 !important;
   font-weight: 700;
   font-size: 0.9rem;
+}
+
+/* Hover effect: Card becomes Black on Mouse Hover */
+.tile:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.tile:hover .num,
+.tile:hover h3,
+.tile:hover p,
+.tile:hover .go {
+  color: #ffffff !important;
 }
 
 /* Footer */
 footer {
   border-top: 2px solid #000000;
   padding: 60px 0 40px;
-  color: #000000;
+  color: #000000 !important;
+  background-color: #ffffff;
 }
 
 .footer-grid {
@@ -202,11 +212,11 @@ footer {
   margin-top: 16px;
   max-width: 320px;
   font-size: 0.9rem;
-  color: #000000;
+  color: #000000 !important;
 }
 
 .footer-col h4 {
-  color: #000000;
+  color: #000000 !important;
   font-size: 0.9rem;
   margin-bottom: 16px;
   font-weight: 700;
@@ -221,13 +231,13 @@ footer {
 }
 
 .footer-col a {
-  color: #000000;
+  color: #000000 !important;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .footer-col a:hover {
-  color: #000000;
+  color: #000000 !important;
   text-decoration: underline;
 }
 
@@ -237,7 +247,7 @@ footer {
   border-top: 2px solid #000000;
   padding-top: 24px;
   font-size: 0.85rem;
-  color: #000000;
+  color: #000000 !important;
 }
 
 @media (max-width: 768px) {
